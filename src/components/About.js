@@ -14,8 +14,11 @@ const About = () => {
  
     
     return (
-        <div>
-            This is About  
+        <div className='container'>
+            <h2>Hi guys,My Name is Vivek Maddeshiya,a 2022 passout student.</h2>
+            <h2>I am learning new things by watching from youtube and reading from geeks for geeks.
+            Thanks for reading This :)
+            </h2> 
         </div>
     )
 }

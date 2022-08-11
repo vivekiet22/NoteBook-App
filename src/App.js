@@ -1,5 +1,9 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -8,7 +12,6 @@ import Alert from "./components/Alert";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { useState } from "react";
-// import Alerts from "./components/Alert";
 
 
 function App() {
@@ -24,31 +27,22 @@ function App() {
     }, 2000);
   };
   return (
-    <>
       <NoteState>
-        <Router>
-          <Navbar />
-          
+        <BrowserRouter>
+          <Navbar />  
           <Alert alert={alert}/>
           <div className="container">
-            <Switch>
-              <Route exact path="/">
-                <Home showAlert={showAlert}/>
-              </Route>
-              <Route exact path="/about">
-                <About />
-              </Route>
-              <Route exact path="/login">
-                <Login showAlert={showAlert} />
-              </Route>
-              <Route exact path="/signup">
-                <Signup showAlert={showAlert}/>
-              </Route>
-            </Switch>
+          <Routes>
+            <Route path="/" element={<Home showAlert={showAlert}/>}/>
+            <Route path="/about" element={<About showAlert={showAlert}/>}/>
+            <Route path="/login" element={<Login showAlert={showAlert}/>}/>
+            <Route path="/signup" element={<Signup showAlert={showAlert}/>}/>
+          </Routes>
+    
           </div>
-        </Router>
+        </BrowserRouter>
       </NoteState>
-    </>
+    
   );
 }
 

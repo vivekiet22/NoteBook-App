@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 
 const Login = (props) => {
-    const [credentials, setCredentials] = useState({email: "", password: ""}) 
-    let history = useHistory();
+    const [credentials, setCredentials] = useState({email: "", password: ""})
+    let navigate = useNavigate();
+ 
+    // let history = useHistory();
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await fetch("http://localhost:5000/api/auth/login", {
@@ -19,7 +21,7 @@ const Login = (props) => {
             // Save the auth token and redirect
             localStorage.setItem('token', json.authtoken); 
             props.showAlert("Logged in Successfully","success")
-            history.push("/");
+            navigate("/");
 
         }
         else{
