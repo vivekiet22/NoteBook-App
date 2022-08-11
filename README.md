@@ -1,7 +1,11 @@
 # A project based on MERN STACK
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+![Screenshot 2022-08-11 192832](https://user-images.githubusercontent.com/57106245/184150739-2763a5d0-0464-46f5-a894-1af19e43fb72.png)
+
+
 
 ## Available Scripts
 
